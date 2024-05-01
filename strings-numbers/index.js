@@ -13,4 +13,3 @@ const booleano = true;
 console.log(booleano);
 console.log(typeof booleano);
 
-const nombre = prompt ("podrias indicarme tu nombre por favor?")
