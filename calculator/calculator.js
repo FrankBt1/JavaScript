@@ -16,21 +16,30 @@ const mensajeFinal = "la respeusta final es: " + resultadoMenosDiez;
 alert(mensajeFinal);*/
 
 
-// Pide al usuario la cantidad de números a sumar
-const cantidad = Number(prompt("¿Cuántos números desea sumar?"));
+
+
 
 // Inicia la variable "sumatoria" en cero
-let sumatoria = 0;
+/*let sumatoria = 0;
+const cantidad  = Number(prompt("¿Cuántos números desea sumar?"));
 
 //  Bucle for para iterar desde 1 hasta la cantidad ingresada por el usuario
-for (let i = 1; i <= cantidad; i++) {
-  // Pide al usuario el número a sumar en cada iteración
+for (let index = 1; index <= cantidad; index++) {
   const numeroAsumar = Number(prompt("Ingrese un número a sumar"));
-  
-  //  Actualiza el valor de "sumatoria" sumando el número capturado
   sumatoria = sumatoria + numeroAsumar;
 }
 
-// Imprime la sumatoria en la consola
-console.log("La sumatoria de los números ingresados es:", sumatoria);
+console.log("La sumatoria de los números ingresados es:", sumatoria);*/
 
+
+
+const numero = Number(prompt("¿Cuántos números vas a sumar?"));
+let suma = 0;
+
+for (let index = 1; index <= numero; index++) {
+  const resultado = Number(prompt("¿Cuáles son los números?"))
+  suma = suma + resultado;
+  
+}
+
+console.log(suma);
