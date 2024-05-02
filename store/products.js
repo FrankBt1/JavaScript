@@ -10,7 +10,7 @@ producto1["foto"] = "https://i.postimg.cc/Jn2C5W84/galaxy1.webp";
 console.log(producto1);
 console.log(producto1.nombre);*/
 
-class Product {
+/*class Product {
   constructor(id, title, price, stock, images, onsale, supplier) {
     this.id = id;
     this.title = title;
@@ -70,4 +70,4 @@ const prod5 = new Product("id789", "Producto 5", 100, 12, [], false);
 console.log(prod5);
 
 prod5.sellUnits(10);
-prod5.sellUnits(5);
+prod5.sellUnits(5);*/
