@@ -10,7 +10,7 @@ producto1["foto"] = "https://i.postimg.cc/Jn2C5W84/galaxy1.webp";
 console.log(producto1);
 console.log(producto1.nombre);*/
 
-/*class Product {
+class Product {
   constructor(id, title, price, stock, images, onsale, supplier) {
     this.id = id;
     this.title = title;
@@ -20,30 +20,26 @@ console.log(producto1.nombre);*/
     this.onsale = onsale;
     this._supplier = supplier;
   }
-  //recuperar o obtener algo
+  sellUnits(units) {
+    if (units > this.stock){
+      console.log("Error, no hay suficiente stock para vender "+ units + " unidades.");
+    }
+    else{
+      this.stock = this.stock - units ;
+      console.log("Unidades vendidas. Stock restante" + this.stock);
+    }
+  }
+
   get getsupplier() {
     return this._supplier;
   }
-  //cambiar algo
-  set setSupplier(newName) {
+  set setsupplier(newName) {
     this._supplier = newName;
-  }
-  sellUnits(units) {
-    if (this.stock >= units) {
-      this.stock -= units;
-      console.log("Se vendieron" + units + "unidades.");
-    } else {
-      console.log(
-        `Error: No hay suficiente stock para vender ${units} unidades.`
-      );
-    }
   }
 }
 
 const prod1 = new Product();
-console.log(prod1);
 const prod2 = new Product("id123", "Producto 2", "price 50");
-console.log(prod2);
 const prod3 = new Product(
   "id456",
   "Producto 3",
@@ -52,22 +48,29 @@ const prod3 = new Product(
   ["imagen1.jpg", "imagen2.jpg"],
   true
 );
-console.log(prod3);
 const prod4 = new Product(
   "id456",
-  "leche",
+  "telefono",
   75,
   20,
   ["imagen1.jpg", "imagen2.jpg"],
-  true
+  true,
+  "nokia"
 );
+const prod5 = new Product(14356, "laptop", 1200, 12, "imagen.png", true, "samsung");
+
+console.log(prod1);
+console.log(prod2);
+console.log(prod2.title);
+console.log(prod3);
+console.log(prod3.onsale);
 console.log(prod4);
-
-prod4.setsupplier = "coca cola";
-console.log("Proveedor actualizado usando setter:", prod4.setsupplier);
-
-const prod5 = new Product("id789", "Producto 5", 100, 12, [], false);
-console.log(prod5);
+prod4.setsupplier = "movistar";
+console.log(
+  "producto actualizado con nuevo proveedor usando set a : " + prod4.getsupplier
+);
 
 prod5.sellUnits(10);
-prod5.sellUnits(5);*/
+prod5.sellUnits(5);
+console.log(prod5);
+
