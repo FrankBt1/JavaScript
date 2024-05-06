@@ -1,17 +1,6 @@
-/*const producto1 = {
-  nombre: "celular",
-  precio: 100000,
-  stock: 2,
-};
-
-producto1.id = "id123";
-producto1["foto"] = "https://i.postimg.cc/Jn2C5W84/galaxy1.webp";
-
-console.log(producto1);
-console.log(producto1.nombre);*/
 
 class Product {
-  constructor(id, title, price, stock, images, onsale, supplier) {
+  constructor(id, title, price, stock, images, onsale, supplier, colors, description) {
     this.id = id;
     this.title = title;
     this.price = price;
@@ -19,6 +8,8 @@ class Product {
     this.images = images;
     this.onsale = onsale;
     this._supplier = supplier;
+    this.colors = colors;
+    this.description= description;
   }
   sellUnits(units) {
     if (units > this.stock){
@@ -38,39 +29,26 @@ class Product {
   }
 }
 
-const prod1 = new Product();
-const prod2 = new Product("id123", "Producto 2", "price 50");
-const prod3 = new Product(
-  "id456",
-  "Producto 3",
-  100,
-  10,
-  ["imagen1.jpg", "imagen2.jpg"],
-  true
-);
-const prod4 = new Product(
-  "id456",
-  "telefono",
-  75,
-  20,
-  ["imagen1.jpg", "imagen2.jpg"],
-  true,
-  "nokia"
-);
-const prod5 = new Product(14356, "laptop", 1200, 12, "imagen.png", true, "samsung");
 
-console.log(prod1);
-console.log(prod2);
-console.log(prod2.title);
-console.log(prod3);
-console.log(prod3.onsale);
-console.log(prod4);
-prod4.setsupplier = "movistar";
-console.log(
-  "producto actualizado con nuevo proveedor usando set a : " + prod4.getsupplier
-);
+const prod1 = new Product(123, "audifonos", 50, 20, ["imagen4.jpg"], true, "logitech", ["red", "yellow"], "A lovely product" );
+const prod2 = new Product(456, "mouse",  100,  10, ["imagen1.jpg", "imagen2.jpg","iamgen3"], true, "genius", ["white", "black"], "An amazing product");
+const prod3 = new Product(456, "telefono", 75, 20,["imagen7.jpg", "imagen8.jpg","imagen9.jpg"], true, "nokia", ["blue", "green", "orange"], "A fantastic product");
+const prod4 = new Product(14356, "laptop", 1200, 12, ["imagen6.png"], true, "samsung", ["orange", "purple"], "A wonderful product");
+const prod5 = new Product(1598, "teclados", 90, 23, ["imagenes3.jpg", false, "torito", ["pink", "silver"], "A stunning product"])
+const prod6 = new Product(1898, "radio", 120, 20, ["imagenes5.jpg", false, "avalanch"], ["brown", "cyan"], "A remarkable product")
+const products = [prod1, prod2, prod3, prod4,prod5, prod6]
+console.log(products);
+console.log(products[1]);
+console.log(products[products.length -1].title );
 
-prod5.sellUnits(10);
-prod5.sellUnits(5);
-console.log(prod5);
 
+products.unshift(prod5)
+console.log(products);
+products.push(prod6)
+console.log(products);
+products.shift(prod5)
+console.log(products);
+products.pop(prod6)
+console.log(products);
+
+console.log(products);
