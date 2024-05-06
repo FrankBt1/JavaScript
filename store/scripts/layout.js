@@ -1,4 +1,4 @@
-const navSelector = document.getElementByid("#nav");
+const navSelector = document.getElementById("nav");
 
 const options = [
   {
@@ -24,54 +24,42 @@ const options = [
   { title: "Garantía", linkTo: "./warranty.html", opts: [""] },
 ];
 
+// Crear enlaces para el menú de navegación
 for (let option of options) {
-  const anchor = document.createElement("a");
+  let anchor = document.createElement("a");
   anchor.className = "nav-button";
   anchor.textContent = option.title;
   anchor.href = option.linkTo;
   navSelector.appendChild(anchor);
 }
 
-const footerSelector = document.getElementById("#footer");
-
+// Crear elementos para el pie de página
+const footerSelector = document.getElementById("footer");
 for (let option of options) {
-  const anchor = document.createAttribute("ul");
+  const anchor = document.createElement("ul");
   anchor.className = "footer-ul";
-  //agregar un il
+
+  // Crear un elemento li para el título de la opción
   let li = document.createElement("li");
-  //asignarle una clase
   li.className = "footer-main-item";
-  //crear una etiqueta a
   let a = document.createElement("a");
-  //asignarle un nombre de clase
   a.className = "footer-a";
-  //asignarle un texto
   a.textContent = option.title;
-  //asignarle un href
   a.href = option.linkTo;
-
-  //agregar al li
   li.appendChild(a);
-  //agregar a la ul
   anchor.appendChild(li);
-}
 
-for (let opt of option.opts) {
-  //crear un li
-  let li = document.createElement("li");
-  //asignarle una clase
-  li.className = "footer-li";
-  //crear una etiqueta a
-  let a = document.createElement("a");
-  //asignarle un nombre de clase
-  a.className = "footer-a";
-  //asignarle un texto
-  a.textContent = opt;
-  //agregar al li
-  li.appendChild(a);
-  //agregar a la ul
-  anchor.appendChild(li);
-}
+  // Crear elementos li para cada opción en opts
+  for (let opt of option.opts) {
+    let li = document.createElement("li");
+    li.className = "footer-li";
+    let a = document.createElement("a");
+    a.className = "footer-a";
+    a.textContent = opt;
+    li.appendChild(a);
+    anchor.appendChild(li);
+  }
 
-//agregar un hijo
-footerSelector.appendChild(anchor);
+  // Agregar la lista al pie de página
+  footerSelector.appendChild(anchor);
+}

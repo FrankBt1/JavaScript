@@ -37,19 +37,6 @@ const prod3 = new Product(456, "telefono", 75, 20,["imagen7.jpg", "imagen8.jpg",
 const prod4 = new Product(14356, "laptop", 1200, 12, ["imagen6.png"], true, "samsung", ["orange", "purple"], "A wonderful product", "Incluye impuesto País y percepción AFIP");
 const prod5 = new Product(1598, "teclados", 90, 23, ["imagenes3.jpg", false, "torito", ["pink", "silver"], "A stunning product"], "Incluye impuesto País y percepción AFIP")
 const prod6 = new Product(1898, "radio", 120, 20, ["imagenes5.jpg", false, "avalanch"], ["brown", "cyan"], "A remarkable product", "Incluye impuesto País y percepción AFIP")
+
+
 const products = [prod1, prod2, prod3, prod4,prod5, prod6]
-console.log(products);
-console.log(products[1]);
-console.log(products[products.length -1].title );
-
-
-products.unshift(prod5)
-console.log(products);
-products.push(prod6)
-console.log(products);
-products.shift(prod5)
-console.log(products);
-products.pop(prod6)
-console.log(products);
-
-console.log(products);
