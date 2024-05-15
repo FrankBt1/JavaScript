@@ -1,7 +1,7 @@
 const edad = Number(prompt("Ingrese su edad"));
 if (edad >= 18) {
     alert("Es mayor de edad")
-} else if (edad < 18) {
+} else if (edad >=1) {
     alert("Es menor de edad")
 } else {
     alert("Edad incorrecta")
